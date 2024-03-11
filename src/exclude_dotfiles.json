@@ -1,0 +1,27 @@
+{
+  "exclude_dotfiles": [
+    ".dotfiles",
+    ".dotfiles_backup",
+    ".terminfo",
+    ".DS_Store",
+    ".wget-hsts",
+    ".Trash",
+    ".bash_history",
+    ".zsh_history",
+    ".node_repl_history",
+    ".python_history",
+    ".cache",
+    ".ssh",
+    ".gnupg",
+    ".wget-hsts",
+    ".local",
+    ".pyenv",
+    ".npm",
+    ".cargo",
+    ".gem",
+    ".pnpm-state",
+    ".rustup",
+    ".hushlogin",
+    ".zcompdump"
+  ]
+}
