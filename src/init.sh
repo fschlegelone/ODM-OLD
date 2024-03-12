@@ -1,4 +1,6 @@
 #!/bin/bash
+#|--| INIT SCRIPT FOR SETTING UP ODM (Automated Installation & Configuration) |--|#
+#|--| If preferred, this can be done manually. (see: readme.md) |--|#
 
 # Load Config
 source ./config.sh

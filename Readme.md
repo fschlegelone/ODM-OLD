@@ -46,6 +46,22 @@ Sudo Rights required!
     ./main.sh
     ```
 
+## Usage
+
+First of all it is important to understand how ODM works, before rushing into it.
+
+### Structure
+
+├── dotfiles                            ORIGIN DOTFILE STORAGE -> delete here, delete everywhere.
+└── src                                 SCRIPT
+    ├── config.sh                       
+    ├── exclude_dotfiles.json
+    ├── homedir.sh
+    ├── init.sh
+    ├── main.sh
+    ├── status.sh
+    └── storage.sh
+
 
 ## Known Issues
 - If you can't see icons in the terminal, make sure that you've installed & selected a Nerd Font
