@@ -1,8 +1,8 @@
-# ODM - One Dotfile Manager 🦾
+# ODM - One Dotfile Manager 󱣇
 
 [![License](https://gist.githubusercontent.com/fschlegelone/7ba6ac2cf19fbd45c306ea28364eea3a/raw/1ecbe7f0227b67a9b33752f195eb002878f8dc1f/license_mit_mauve.svg)](LICENSE)
 
-## 🗒 Description
+## Description 
 
 The first Dotfile Manager that doesnt suck!
 
@@ -13,14 +13,14 @@ Since the Dotfile problem typically occurs on Unixish Operating Systems such as 
 - [MacOS](https://www.apple.com/macos)
 - [Docker](https://www.docker.com/) & [Podman](https://podman.io/) (Coming soon..)
 
-## Prerequisites
+## Prerequisites 
 Prerequisites are automatically installed by ODMs Initialization Script. 
 If you can't or dont wanna use it, you can manually install them.
 - [Git](https://git-scm.com/)
 - [Gum](https://github.com/charmbracelet/gum)
 - [NerdFont](https://www.nerdfonts.com/)
 
-## Installation
+## Installation 
 Sudo Rights required!
 
 1. Clone the repository
@@ -46,11 +46,11 @@ Sudo Rights required!
     ./main.sh
     ```
 
-## Usage
+## Usage 󰣿
 
 First of all it is important to understand how ODM works, before rushing into it.
 
-### Structure
+### Structure 
 
 ├── dotfiles                            ORIGIN DOTFILE STORAGE -> delete here, delete everywhere.
 └── src                                 SCRIPT
@@ -63,6 +63,6 @@ First of all it is important to understand how ODM works, before rushing into it
     └── storage.sh
 
 
-## Known Issues
+## Known Issues 
 - If you can't see icons in the terminal, make sure that you've installed & selected a Nerd Font
 - If you run into
