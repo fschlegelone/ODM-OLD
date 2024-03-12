@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Load Config
+source ./config.sh
+
 # Set Script Permissions
 set_permissions() {
     repo_root=$(git rev-parse --show-toplevel)
