@@ -15,24 +15,38 @@ dotfile_storage_add() {
     dotfiles_userhome=()
     for file in "$HOME"/.*; do
         filename=$(basename "$file")
-        if ! grep -q "\"$filename\"" <<<"$json_exclude_dotfiles"; then
+        if [[ ! " ${exclude_dotfiles[@]} " =~ " ${filename} " ]]; then
             dotfiles_userhome+=("$filename")
         fi
     done
 
     # Select Dotfiles to store
-    gum style --foreground "$HEX_HL1" "Select Dotfiles to store."
-    add_to_storage=$(gum choose --height "15" --cursor " " --cursor-prefix " " --unselected-prefix " " --selected-prefix "󰱒 " --no-limit "${dotfiles_userhome[@]}")
+    gum style --foreground "$HEX_HL1" "Select Dotfiles to store"
+    add_to_storage=$(gum choose --height 10 --cursor " " --cursor-prefix " " --unselected-prefix " " --selected-prefix "󰱒 " --no-limit "${dotfiles_userhome[@]}")
 
     # Copy selected Dotfiles to Dotfile Storage
-    gum style --foreground "$HEX_HL1" "Copying files to Dotfile Storage..."
     for file in $add_to_storage; do
         if [ -f "$HOME/$file" ]; then
-            echo "file"
-            cp "$HOME/$file" "$dir_dotfile_storage" # files
+            # files
+            (
+                cp -f "$HOME/$file" "$dir_dotfile_storage"
+            ) &
+            pid=$!
+            while kill -0 $pid 2>/dev/null; do
+                # Display Spinner while copying
+                gum spin -s line --title "Storing File $file.." -- sleep 2
+            done
         elif [ -d "$HOME/$file" ]; then
-            echo "directory"
-            cp -RL "$HOME/$file" "$dir_dotfile_storage" # directories
+            # directories
+            (
+                cp -RPf "$HOME/$file" "$dir_dotfile_storage" # to_do: maybe change to cp -RL, -R, -rfP or -RLP
+            ) &
+            pid=$!
+            while kill -0 $pid 2>/dev/null; do
+                # Display Spinner while copying
+                gum spin -s line --title "Storing Directory $file.." -- sleep 2
+            done
+
         fi
     done
 }
@@ -82,7 +96,7 @@ dotfile_storage_backup() {
     pid=$!
     while kill -0 $pid 2>/dev/null; do
         # Display Spinner while copying
-        gum spin -s line --title "y" --title "Backing Up.." -- sleep 2
+        gum spin -s line --title "Backing Up.." -- sleep 2
     done
 
 }

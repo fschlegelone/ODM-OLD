@@ -19,5 +19,27 @@ dir_odm="$HOME/ODM"
 dir_dotfile_storage="$dir_repo_root/dotfiles"
 # Backup Directory
 dir_dotfile_storage_backup="$dir_odm/dotfile_storage_backup"
-# Exclude Dotfiles JSON file
-json_exclude_dotfiles=$(cat "$dir_repo_root/src/exclude_dotfiles.json")
+
+#|--| EXCLUDED DOTFILES |--|#
+exclude_dotfiles=(
+    ".terminfo"
+    ".DS_Store" # MacOS auto generated cache file
+    ".wget-hsts"
+    ".Trash"
+    ".bash_history"
+    ".zsh_history"
+    ".node_repl_history"
+    ".python_history"
+    ".cache"
+    ".ssh"
+    ".gnupg"
+    ".wget-hsts"  # Wget
+    ".local"      # User installed programs
+    ".pyenv"      # Python
+    ".npm"        # Node Package Manager
+    ".cargo"      # Rust
+    ".gem"        # Ruby
+    ".pnpm-state" # PNPM (npm enhancement)
+    ".rustup"     # Rust
+    ".zcompdump"
+)
