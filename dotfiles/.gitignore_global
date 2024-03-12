@@ -1,0 +1,8 @@
+###########################
+## GLOBAL GITIGNORE FILE ##
+###########################
+
+# ALWAYS IGNORE THESE FILES
+.DS_Store
+node_modules
+readme.md

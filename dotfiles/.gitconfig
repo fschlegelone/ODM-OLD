@@ -1,0 +1,35 @@
+[user]
+email = fabian@schlegel.one
+name = fschlegelone
+[core]
+editor = nvim
+excludesfile = ~/.gitignore_global
+[init]
+defaultBranch = main
+[push]
+autoSetupRemote = true
+[pull]
+rebase = true
+[filter "lfs"]
+process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+
+[alias]
+st = status
+cm = commit -m
+br = branch
+df = diff
+lg = log --graph --oneline --decorate --all
+
+[color]
+ui = auto
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[receive]
+	denyNonFastForwards = false

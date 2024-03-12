@@ -1,0 +1,107 @@
+# STARSHIP CONFIG FILE #
+
+###################
+#   COLORSCHEME   #
+###################
+# Pink = #F5BDE6
+# Mauve = #C6A0F6
+# Red = #ED8796
+# Maroon = #EE99A0
+# Yellow = #EED4
+# Teal = #8BD5CA
+# Sky = #91D7E3
+# Sapphire = #7DC4E4
+# Blue = #8AAD
+# Lavendar = #B7BDF8
+# Text = #CAD3
+# Base = #24273A
+# Mantle = #CAD3F5
+# Crust = #181926
+
+
+format = """
+[](bg:#C6A0F6 fg:#24273A )\
+$shell\
+[](bg:#8AADF4 fg:#C6A0F6)\
+$directory\
+[](bg:#7DC4E4 fg:#8AADF4)\
+$git_branch\
+[](bg:#8BD5CA fg:#7DC4E4)\
+$c\
+$java\
+$nodejs\
+$rust\
+$zig\
+$python\
+$swift\
+[ ](fg:#8BD5CA)\
+$line_break\
+${custom.icon}\
+${custom.react}\
+"""
+add_newline = true
+
+[custom.icon]
+symbol = ""
+style = "fg:#EED49F"
+format = "[ $symbol ]($style)"
+when = true
+
+[shell]
+style = "bg:#C6A0F6 fg:#181926"
+zsh_indicator = "󰏰"
+bash_indicator = ""
+fish_indicator = "󰈺"
+powershell_indicator = "󰨊"
+unknown_indicator = ""
+format = "[ $indicator ]($style)"
+disabled = false
+
+[directory]
+style = "bg:#8AADF4 fg:#181926"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "../"
+read_only = '🔒'
+
+[directory.substitutions]
+"~" = "󰜥"
+"Downloads" = " Downloads"
+"/opt/nas_home" = "󰣳 nas_home"
+"/opt/repos" = " repos"
+
+[git_branch]
+symbol = ""
+style = "bg:#7DC4E4 fg:#181926"
+format = "[ $symbol $branch ]($style)"
+
+# LANGUAGES #
+[nodejs]
+symbol = ""
+style = "bg:#8BD5CA fg:#181926"
+format = "[ $symbol ($version) ]($style)"
+[java]
+symbol = ""
+style = "bg:#8BD5CA fg:#181926"
+format = "[ $symbol ($version) ]($style)"
+[python]
+symbol = "👾"
+style = "bg: #8BD5CA fg:#181926"
+format = "[ $symbol ]($style)"
+pyenv_version_name = true
+[rust]
+symbol = ""
+style = "bg:#8BD5CA fg:#181926"
+format = "[ $symbol ($version) ]($style)"
+[zig]
+symbol = "⚡️"
+style = "bg:#8BD5CA fg:#181926"
+format = "[$symbol($version)]($style)"
+[c]
+symbol = ""
+style = "bg:#8BD5CA fg:#181926"
+format = "[ $symbol ($version) ]($style)"
+[swift]
+symbol = "🏎"
+style = "bg:#8BD5CA fg:#181926"
+format = "[ $symbol ($version)]($style)"

@@ -1,3 +1,4 @@
 .DS_Store
-dotfiles
-dotfiles_backup
+dotfiles/.vscode/
+dotfiles/.config/zed/
+dotfiles/.config/containers
